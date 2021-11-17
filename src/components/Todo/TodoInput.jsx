@@ -13,7 +13,7 @@ const TodoInput = ({ onAddTask }) => {
   };
 
   return (
-    <div class={style.inputForm}>
+    <div className={style.inputForm}>
       <h3>T O D O</h3>
       <input
         id="title"
