@@ -1,0 +1,36 @@
+.card {
+  width: 60%;
+  margin: 10px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  color: black;
+  border: 1px solid #10bc10;
+}
+
+.card p {
+  font-size: 14px;
+  color: rgb(133, 130, 130);
+}
+
+.taskTitle {
+  background-color: #10bc10;
+}
+
+.taskTitle h3 {
+  padding-left: 10px;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card svg{
+    cursor: pointer;
+}

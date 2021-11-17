@@ -1,0 +1,35 @@
+.inputForm {
+  display: flex;
+  flex-direction: column;
+    width:100%;
+  color: white;
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+ .inputForm h3{
+    color: #057DCD;
+    font-size: 48px;
+    margin-bottom: 48px;
+}
+
+.inputForm input {
+    outline: none;
+    border-style: none;
+    width:30%;
+  margin: 10px 0;
+  padding: 10px;
+  border:1px solid #057DCD; 
+  border-radius: 4px;
+}
+
+.inputForm input:focus {
+    outline: none !important;
+  border-color: #43B0F1;
+}
+
+.inputForm svg{
+    cursor: pointer;
+}
