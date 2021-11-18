@@ -6,7 +6,7 @@ const TodoItem = ({ id, title, description, status, handleDelete,handleToggle })
   return (
     <div className={style.card}>
       <div className={style.taskTitle}>
-        {" "}
+       
         <h3>{title}</h3>
       </div>
 

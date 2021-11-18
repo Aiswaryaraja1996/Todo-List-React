@@ -32,7 +32,7 @@ const TodoInput = ({ onAddTask }) => {
         type="text"
         placeholder="Title"
         onChange={handleChange}
-        value={task.title}
+      
         name="title"
       ></input>
       <input
@@ -40,7 +40,7 @@ const TodoInput = ({ onAddTask }) => {
         type="text"
         placeholder="Description"
         onChange={handleChange}
-        value={task.description}
+        
         name="description"
       ></input>
 
@@ -48,6 +48,8 @@ const TodoInput = ({ onAddTask }) => {
       <button type="submit" style={btnStyle}>
       <PlusCircleFill  color="#43B0F1" size={42} />
       </button>
+
+   
     </form>
   );
 };

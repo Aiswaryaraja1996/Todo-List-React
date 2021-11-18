@@ -7,12 +7,13 @@ import style from "./Todo.module.css";
 
 const Todo = () => {
   const [todo, setTodo] = useState([]);
+  const [showCompleted, setShowCompleted] = useState(false);
 
   const handleAddTask = ({ title, description }) => {
     const payLoad = {
       title: title,
       description: description,
-      status: false,
+      status: todo.length % 2 === 0 ? true : false,
       id: todo.length + 1,
     };
 
@@ -36,20 +37,44 @@ const Todo = () => {
       <div className={style.cardInput}>
         <TodoInput onAddTask={handleAddTask}></TodoInput>
       </div>
+      <button onClick={() => setShowCompleted(!showCompleted)}>
+        {showCompleted?"HIDE COMPLETED" : "SHOW COMPLETED"}
+      </button>
       <div className={style.cardList}>
-        {todo.map((item) => {
-          return (
-            <TodoItem
-              key={item.id}
-              title={item.title}
-              description={item.description}
-              id={item.id}
-              status={item.status}
-              handleDelete={handleDelete}
-              handleToggle={handleToggle}
-            ></TodoItem>
-          );
-        })}
+        {todo
+          .filter((item) => !item.status)
+          .map((i) => {
+            return (
+              <TodoItem
+                key={i.id}
+                title={i.title}
+                description={i.description}
+                id={i.id}
+                status={i.status}
+                handleDelete={handleDelete}
+                handleToggle={handleToggle}
+              ></TodoItem>
+            );
+          })}
+      </div>
+
+      <div className={style.cardList}>
+        {showCompleted &&
+          todo
+            .filter((item) => item.status)
+            .map((i) => {
+              return (
+                <TodoItem
+                  key={i.id}
+                  title={i.title}
+                  description={i.description}
+                  id={i.id}
+                  status={i.status}
+                  handleDelete={handleDelete}
+                  handleToggle={handleToggle}
+                ></TodoItem>
+              );
+            })}
       </div>
     </div>
   );
